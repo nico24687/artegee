@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'welcome#index'
 
-  get "/webhooks" to: "webhooks#index"
+
 
 
   resources :artists
