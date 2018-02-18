@@ -3,8 +3,10 @@ Rails.application.routes.draw do
 
   root to: 'welcome#index'
 
-
-
-
   resources :artists
+
+  
+
+  get '/login', as: 'login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
 end
