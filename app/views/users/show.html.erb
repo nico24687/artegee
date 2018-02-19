@@ -274,27 +274,6 @@
 
 
 
-<p> Welcome <%= @user.user_name %> </p>
-
-<p><%= @user.first_name%> <%= @user.last_name%></p>
-<p><%= @user.location %></p>
-</p><%= @user.bio %></p>
-
-
-<%= image_tag @user.avatar.url(:thumb)%>
-
-
-<p><%= link_to "New artwork", new_user_artwork_path(@user) %></p>
-
-<h1>My Artworks</h1>
-
-<% @user.artworks.each do |artwork| %>
-  <%= artwork.title %>
-  <%= artwork.description %>
-  <%= artwork.width %>
-  <%= artwork.height %>
-  <%= image_tag artwork.image.url(:medium)%>
-<% end %>
 
 
 

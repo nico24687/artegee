@@ -21,7 +21,6 @@ describe "As a guest user" do
     click_on "Submit"
   
     expect(current_path).to eq(user_path(User.last))
-    expect(page).to have_content("Welcome nico24687")
     expect(page).to have_content("London")
     expect(page).to have_content("I like art")
     expect(page).to have_content("Nico Lewis")
@@ -43,7 +42,6 @@ describe "As a previously signed up user" do
     click_on "Submit"
 
     expect(current_path).to eq(user_path(user))
-    expect(page).to have_content("Welcome nico24687")
     expect(page).to have_content("Nico Lewis")
     expect(page).to have_content("London")
     expect(page).to have_content("I love art")
@@ -52,9 +50,9 @@ describe "As a previously signed up user" do
     user = User.create(user_name: "nico24687", password: "donothackin", bio: "I love art", first_name: "Nico", last_name: "Lewis", email: "nico@fake.com", location:"London")
 
     visit user_path(user)
-
+    
     click_on "New artwork"
-
+    
     expect(current_path).to eq(new_user_artwork_path(user))
     fill_in "artwork[title]", with: "my masterpiece"
     fill_in "artwork[description]", with: "I know its so good"
@@ -64,11 +62,7 @@ describe "As a previously signed up user" do
 
     expect(current_path).to eq(user_path(user))
 
-    expect(page).to have_content("my masterpiece")
-    expect(page).to have_content("I know its so good")
-    expect(page).to have_content(20)
-    expect(page).to have_content(60)
-
+    expect(Artwork.count).to eq(1)
   end
 end
 
