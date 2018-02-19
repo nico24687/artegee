@@ -1,29 +1,55 @@
-<%= form_for @user, html: { multipart: true } do |f| %>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+          <h1>Welcome Artist</h1>
+          <p>Fill in the form below to start connecting with your local market</p>
+        </div>
+    </div>
+</div>
 
-  <%= f.label :firstname %>
-  <%= f.text_field :first_name %>
 
-  <%= f.label :lastname %>
-  <%= f.text_field :last_name %>
 
-  <%= f.label :user_name %>
-  <%= f.text_field :user_name %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+        
+          <%= form_for @user, html: { multipart: true } do |f| %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+            <%= f.label :firstname,  "First name" %>
+            <%= f.text_field :first_name, class: "form-control" %>
 
-  <%= f.label :avatar %>
-  <%= f.file_field  :avatar %>
+            <%= f.label :lastname, "Last name" %>
+            <%= f.text_field :last_name, class: "form-control" %>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+            <%= f.label :user_name %>
+            <%= f.text_field :user_name, class: "form-control" %>
 
-  <%= f.label :location %>
-  <%= f.text_field :location %>
+            <%= f.label :password %>
+            <%= f.password_field :password, class: "form-control" %>
 
-  <%= f.label :bio %>
-  <%= f.text_area :bio %>
+            <%= f.label :avatar %>
+            <%= f.file_field  :avatar %>
 
-  <%= f.submit "Sign Up" %>
-<% end %>
+            <%= f.label :email %>
+            <%= f.text_field :email, class: "form-control" %>
+
+            <%= f.label :location %>
+            <%= f.text_field :location, class: "form-control" %>
+
+            <%= f.label :bio %>
+            <%= f.text_area :bio, class: "form-control" %>
+
+            <%= f.submit "Submit", class: "btn btn-primary-outline", style: 'float:right; margin-top: 40px; margin-bottom: 40px;' %>
+          <% end %>
+
+        </div>
+        <div class="col-md-offset-2 col-md-4">
+         <p></p>
+          <div class="thumbnail" style="margin-top: 26px;">
+            <img src="https://image.ibb.co/eXcZY7/undraw_working_woman_3uve.png" alt="...">
+          </div>
+        </div>
+    </div>
+</div>
+
 

@@ -18,7 +18,7 @@ describe "As a guest user" do
     fill_in "user[location]", with: "London"
     fill_in "user[bio]", with: "I like art"
 
-    click_on "Sign Up"
+    click_on "Submit"
   
     expect(current_path).to eq(user_path(User.last))
     expect(page).to have_content("Welcome nico24687")
@@ -40,7 +40,7 @@ describe "As a previously signed up user" do
     fill_in :user_name, with: "nico24687"
     fill_in :password, with: "donothackin"
     
-    click_on "Login"
+    click_on "Submit"
 
     expect(current_path).to eq(user_path(user))
     expect(page).to have_content("Welcome nico24687")
