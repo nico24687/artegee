@@ -1,20 +1,61 @@
-<%= form_for [@user, @artwork], html: { multipart: true } do |f| %>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+          <h1>New Artwork</h1>
+          <p>Fill in the form below to show the community your creation</p>
+        </div>
+    </div>
+</div>
 
-  <%= f.label :title %>
-  <%= f.text_field :title %>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
 
-  <%= f.label :image %>
-  <%= f.file_field  :image %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+        
+          <%= form_for [@user, @artwork], html: { multipart: true } do |f| %>
 
-  <%= f.label :width %>
-  <%= f.number_field :width %>
+            <%= f.label :title %>
+            <%= f.text_field :title, class: "form-control" %>
 
-  <%= f.label :height %>
-  <%= f.number_field :height %>
+            <%= f.label :description %>
+            <%= f.text_field :description, class: "form-control" %>
 
-  <%= f.submit "Submit" %>
-<% end %>
+            <%= f.label :image %>
+            <%= f.file_field  :image %>
+
+            <%= f.label :width %>
+            <%= f.number_field :width, class: "form-control" %>
+
+            <%= f.label :height %>
+            <%= f.number_field :height, class: "form-control  " %>
+          
+            <%= f.submit "Submit", class: "btn btn-primary-outline", style: 'float:right; margin-top: 40px; margin-bottom: 40px;' %>
+          <% end %>
+
+        </div>
+        <div class="col-md-offset-2 col-md-4">
+         <p></p>
+          <div class="thumbnail" style="margin-top: 26px;">
+            <img src="https://image.ibb.co/hO440n/undraw_add_file2_gvbb.png" alt="...">
+          </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
