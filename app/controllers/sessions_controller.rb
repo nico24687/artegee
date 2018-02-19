@@ -4,10 +4,10 @@ class SessionsController < ApplicationController
 
   def create
     
-    artist = Artist.find_by(username: params[:username])
-    if artist && artist.authenticate(params[:password])
-      session[:artist_id] = artist.id
-      redirect_to artist_path(artist)
+    user = User.find_by(user_name: params[:user_name])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to user_path(user)
     else
       render :new
     end 
