@@ -1,0 +1,17 @@
+<%= form_for [@user, @artwork] do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :width %>
+  <%= f.number_field :width %>
+
+  <%= f.label :height %>
+  <%= f.number_field :height %>
+
+  <%= f.submit "Submit" %>
+<% end %>
+
