@@ -3,3 +3,6 @@
 <p><%= @user.first_name%> <%= @user.last_name%></p>
 <p><%= @user.location %></p>
 </p><%= @user.bio %></p>
+
+
+<%= image_tag @user.avatar.url(:thumb)%>
