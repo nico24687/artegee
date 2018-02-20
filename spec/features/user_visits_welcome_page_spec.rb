@@ -6,6 +6,7 @@ describe "As a guest user" do
 
     expect(page).to have_content("Sign Up")
     expect(page).to have_content("Login")
+    expect(page).to have_content("Artists of the month")
   end
   it "can sign up as a new user" do 
     visit new_user_path 
@@ -24,6 +25,15 @@ describe "As a guest user" do
     expect(page).to have_content("London")
     expect(page).to have_content("I like art")
     expect(page).to have_content("Nico Lewis")
+  end
+  it "can view an artists show page that is featured in artists of the month" do 
+    user = User.create(user_name: "nico24687", password: "donothackin", bio: "I love art", first_name: "Nico", last_name: "Lewis", email: "nico@fake.com", location:"London")
+
+    visit root_path
+    click_on "Discover"
+
+    expect(current_path).to eq(user_path(user))
+    expect(page).to have_content("Nico")
   end
   it "can view the entire potfolio page for an artist" do 
     user = User.create(user_name: "nico24687", password: "donothackin", bio: "I love art", first_name: "Nico", last_name: "Lewis", email: "nico@fake.com", location:"London")

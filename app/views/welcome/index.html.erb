@@ -26,19 +26,7 @@
               <p class="m-b-md"><%= user.bio %></p>
 
               <ul class="panel-menu">
-                <li class="panel-menu-item">
-                  <a href="#userModal" class="text-inherit" data-toggle="modal">
-                    Artworks
-                    <h5 class="m-y-0"><%= user.artworks.count %></h5>
-                  </a>
-                </li>
-
-                <li class="panel-menu-item">
-                  <a href="#userModal" class="text-inherit" data-toggle="modal">
-                    Enemies
-                    <h5 class="m-y-0">1</h5>
-                  </a>
-                </li>
+                <%= link_to "Discover", user_path(user), class: "btn btn-sm btn-primary-outline" %>
               </ul>
             </div>
           </div>
@@ -46,5 +34,15 @@
         
        
         <% end %>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+          <h1>Featured Artworks</h1>
+          <p>Explore work others have been keeping an eye on</p>
+        </div>
     </div>
 </div>
