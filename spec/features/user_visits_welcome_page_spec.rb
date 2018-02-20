@@ -31,7 +31,7 @@ describe "As a guest user" do
     visit user_path(user)
     click_on "View all"
     expect(current_path).to eq(user_portfolio_index_path(user))
-    expect(page).to have_content("All work by nico24687")
+    expect(page).to have_content("Nico Lewis")
   end
 end
 
