@@ -35,6 +35,18 @@ describe "As a guest user" do
     expect(current_path).to eq(user_path(user))
     expect(page).to have_content("Nico")
   end
+  it "can view the show page for a featured piece of art" do 
+    user = User.create(user_name: "nico24687", password: "donothackin", bio: "I love art", first_name: "Nico", last_name: "Lewis", email: "nico@fake.com", location:"London")
+    artwork = user.artworks.create(title: "lady with swan", description: "ooo look at that swan", width: 50, height: 30)
+
+    visit "/"
+    click_on "View"
+    expect(current_path).to eq(user_artwork_path(user,artwork))
+    expect(page).to have_content("lady with swan")
+    expect(page).to have_content("ooo look at that swan")
+    expect(page).to have_content(50)
+    expect(page).to have_content(30)
+  end
   it "can view the entire potfolio page for an artist" do 
     user = User.create(user_name: "nico24687", password: "donothackin", bio: "I love art", first_name: "Nico", last_name: "Lewis", email: "nico@fake.com", location:"London")
 

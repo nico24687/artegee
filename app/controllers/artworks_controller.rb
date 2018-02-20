@@ -15,6 +15,11 @@ class ArtworksController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:user_id])
+    @artwork = @user.artworks.find(params[:id])
+  end
+
   private
     def artwork_params
     params.require(:artwork).permit(:title, :description, :width, :height, :image)
