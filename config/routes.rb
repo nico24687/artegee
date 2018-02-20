@@ -5,10 +5,11 @@ Rails.application.routes.draw do
 
   resources :users do 
     resources :artworks
+    resources :portfolio, only: [:index]
   end
   
 
-  
+ 
 
   get '/login', as: 'login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

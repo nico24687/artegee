@@ -25,6 +25,14 @@ describe "As a guest user" do
     expect(page).to have_content("I like art")
     expect(page).to have_content("Nico Lewis")
   end
+  it "can view the entire potfolio page for an artist" do 
+    user = User.create(user_name: "nico24687", password: "donothackin", bio: "I love art", first_name: "Nico", last_name: "Lewis", email: "nico@fake.com", location:"London")
+
+    visit user_path(user)
+    click_on "View all"
+    expect(current_path).to eq(user_portfolio_index_path(user))
+    expect(page).to have_content("All work by nico24687")
+  end
 end
 
 describe "As a previously signed up user" do 
