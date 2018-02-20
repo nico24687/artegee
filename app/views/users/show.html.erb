@@ -18,7 +18,7 @@
             <li class="panel-menu-item">
               <a href="#userModal" class="text-inherit" data-toggle="modal">
                 Artworks
-                <h5 class="m-y-0"><% @user.artworks.count %>2</h5>
+                <h5 class="m-y-0"><%= @user.artworks.count %></h5>
               </a>
             </li>
 
@@ -36,7 +36,7 @@
         <div class="panel-body">
           <h5 class="m-t-0">About <small>· <a href="#">Edit</a></small></h5>
           <ul class="list-unstyled list-spaced">
-            <li><span class="text-muted" style="margin-right: 16px;"><i class="fas fa-university"></i></span>Studied at <a href="#">Oh, Canada</a>
+            <li><span class="text-muted" style="margin-right: 16px;"><i class="fas fa-university"></i></span>Studied at <a href="#"><%= @user.school %></a>
             <li><span class="text-muted" style="margin-right: 16px;"><i class="far fa-compass"></i></i></span>From <a href="#"><%= @user.location %></a>
           </li></ul>
         </div>
