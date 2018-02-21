@@ -1,21 +1,39 @@
 
-        <div class="col-md-3">
-          <div class="panel panel-default panel-profile m-b-md">
-            <div class="panel-heading" style="background-image: url('<%= @artwork.image.url %>'); height: 257px; "></div>
-            <div class="panel-body text-center">
-             
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-4">
 
-              <h5 class="panel-title">
-                <a class="text-inherit" href="profile/index.html"></a>
-              </h5>
+        
+        
+            <div class="modal-content" style="margin-top: 200px;">
+              <div class="modal-header">
+                
+                <h4 class="modal-title"><%= @artwork.user.first_name %>'s <%= @artwork.title %></h4>
+              </div>
+              <div class="modal-body modal-body-scroller">
+                <p><%= @artwork.description %></p>
 
+                <p><i class="fas fa-arrows-alt-h"></i> <%= @artwork.width %> inches  </p>
 
+                <p><i class="fas fa-arrows-alt-v"></i> <%= @artwork.height %>inches </p>
 
-              <ul class="panel-menu">
-              </ul>
+              </div>
+
+              <div class="modal-body">
+                <input type="text" class="form-control" placeholder="Message">
+              </div>
             </div>
+
+        </div>
+        <div class="col-md-offset-1 col-md-6">
+         <p></p>
+          <div class="thumbnail" style="margin-top: 26px;">
+             <%= image_tag @artwork.image.url(:large) %> 
           </div>
         </div>
+    </div>
+</div>
+
 
 
 
