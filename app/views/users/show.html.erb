@@ -51,7 +51,7 @@
           <% @user.artworks.each do |artwork| %>
           <div data-grid="images" data-target-height="150"><div style="margin-bottom: 10px; margin-right: 10px; display: inline-block; vertical-align: bottom;">
               <%= image_tag artwork.image.url(:medium), style: "width: 117px; height: 118px;" %>
-          
+            
             </div><div style="margin-bottom: 10px; margin-right: 0px; display: inline-block; vertical-align: bottom;">
               <%= image_tag artwork.image.url(:medium), style: "width: 117px; height: 118px;" %>  
             </div></div>
