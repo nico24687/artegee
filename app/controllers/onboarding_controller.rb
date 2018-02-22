@@ -7,7 +7,8 @@ class OnboardingController < ApplicationController
   end
 
   def create
-    puts "Logging typeform callback"
-    pp params
+    form = OnboardingFormPresenter.new(params).form
+    @user = User.find(form.user_id)
+    @user.update(first_name: form.first_name, last_name: form.last_name, school: form.school, bio: form.bio, email: form.email, location: form.location)
   end
 end
