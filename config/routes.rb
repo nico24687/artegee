@@ -4,13 +4,13 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
 
   resources :users do 
+    resources :onboarding, only: [:index]
     resources :artworks
     resources :portfolio, only: [:index]
   end
   
-
- 
-
+  
+  post '/onboarding', as: 'onboarding', to: 'onboarding#create'
   get '/login', as: 'login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
