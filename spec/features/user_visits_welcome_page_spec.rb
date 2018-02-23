@@ -73,6 +73,15 @@ describe "As a previously signed up user" do
     expect(page).to have_content("London")
     expect(page).to have_content("I love art")
   end
+  it "can see posts on its profile page" do 
+    user = User.create(user_name: "nico24687", password: "donothackin", bio: "I love art", first_name: "Nico", last_name: "Lewis", email: "nico@fake.com", location:"London")
+    post = user.posts.create(body: "an example post")
+
+    visit user_path(user)
+
+    expect(page).to have_content("an example post")
+
+  end
   it "can create a new piece of artwork" do 
     user = User.create(user_name: "nico24687", password: "donothackin", bio: "I love art", first_name: "Nico", last_name: "Lewis", email: "nico@fake.com", location:"London")
 
