@@ -8,16 +8,17 @@ class OnboardingFormPresenter
     pp @form
 
     user_id = @form["form_response"]["hidden"]["user_id"]
-    first_name = @form["form_response"]["answers"][0]["text"]
-    last_name = @form["form_response"]["answers"][1]["text"]
-    avatar = @form["form_response"]["answers"][2]["file_url"]
-    school = @form["form_response"]["answers"][3]["text"]
-    bio = @form["form_response"]["answers"][4]["text"]
-    email = @form["form_response"]["answers"][5]["text"]
-    location = @form["form_response"]["answers"][6]["text"]
-    style = @form["form_response"]["answers"][7]["choice"]["label"]
+
+    first_name = answer_for("SstvvqT1TyVl")["text"]
+    last_name = answer_for("Z9Xuj60iPPGM")["text"]
+    avatar = answer_for("wq5QC9DsVBf5")["file_url"]
+    school = answer_for("K7ds92B2yz0M")["text"]
+    bio = answer_for("ABNgubRKZ2qw")["text"]
+    email = answer_for("m4sHdfLxnvXr")["text"]
+    location = answer_for("i22lqhuJZKqZ")["text"]
+    style = answer_for("OqTp9mVbbC0s")["choice"]["label"]
   
-    #do this for all the other answers
+  
     OnboardingForm.new(user_id: user_id, 
                        first_name: first_name, 
                        last_name: last_name, 
@@ -29,6 +30,14 @@ class OnboardingFormPresenter
                        location: location)
 
   end
+
+  private
+
+    def answer_for(field_id)
+      @form["form_response"]["answers"].detect do |answer|
+        answer["field"]["id"] == field_id
+      end 
+    end
 end
 
 
