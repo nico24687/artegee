@@ -9,7 +9,7 @@ class OnboardingController < ApplicationController
   def create
     form = OnboardingFormPresenter.new(params).form
     @user = User.find(form.user_id)
-    @user.update(first_name: form.first_name,
+    @user.update!(first_name: form.first_name,
                  last_name: form.last_name,
                  school: form.school,
                  bio: form.bio,
