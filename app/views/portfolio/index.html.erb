@@ -20,26 +20,18 @@
 
 
 
-
-<% @user.artworks.each do |artwork| %>
-<div class="container m-y-md" data-grid="images"><div style="margin-bottom: 10px; margin-right: 10px; display: inline-block; vertical-align: bottom;">
-    <%= image_tag artwork.image.url(:medium), style: "width: 405px; height: 254px;"%>    
-  </div><div style="margin-bottom: 10px; margin-right: 10px; display: inline-block; vertical-align: bottom;">
-    <%= image_tag artwork.image.url(:medium), style: "width: 253px; height: 254px;" %>    
-  </div><div style="margin-bottom: 10px; margin-right: 10px; display: inline-block; vertical-align: bottom;">
-    <%= image_tag artwork.image.url(:medium), style: "width: 253px; height: 254px;" %> 
-  </div><div style="margin-bottom: 10px; margin-right: 0px; display: inline-block; vertical-align: bottom;">
-    <%= image_tag artwork.image.url(:medium), style: "width: 255px; height: 254px;" %> 
-  </div><div style="margin-bottom: 10px; margin-right: 10px; display: inline-block; vertical-align: bottom;">
-    <%= image_tag artwork.image.url(:medium), style: "width: 253px; height: 254px;" %> 
-  </div><div style="margin-bottom: 10px; margin-right: 10px; display: inline-block; vertical-align: bottom;">
-    <%= image_tag artwork.image.url(:medium), style: "width: 253px; height: 254px;" %> 
-  </div><div style="margin-bottom: 10px; margin-right: 10px; display: inline-block; vertical-align: bottom;">
-    <%= image_tag artwork.image.url(:medium), style: "width: 405px; height: 254px;" %> 
-  </div><div style="margin-bottom: 10px; margin-right: 0px; display: inline-block; vertical-align: bottom;">
-    <%= image_tag artwork.image.url(:medium), style: "width: 255px; height: 254px;" %> 
-    </div></div>
+<div class="container m-y-md" data-grid="images">
+<% @user.artworks.in_groups_of(4, false).each do |artwork_row| %>
+  <% wide_index = rand(4) %>
+  <% artwork_row.each_with_index do |artwork, index| %>
+  <div style="margin-bottom: 10px; margin-right: 10px; display: inline-block; vertical-align: bottom;">
+    <%= image_tag artwork.image.url(:medium), style: "width: #{ wide_index == index ? 405 : 248}px; height: 254px;" %>    
+  </div>
   <% end %>
+<% end %>
+</div>
+
+
 
 
 
