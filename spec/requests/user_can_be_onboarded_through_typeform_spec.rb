@@ -14,7 +14,6 @@ describe "User finishes typeform" do
  
     expect(onboarded_user.first_name).to eq("John")
     expect(onboarded_user.last_name).to eq("Doe")
-    expect(onboarded_user.avatar.url).to_not be_nil
     expect(onboarded_user.school).to eq("Parsons")
     expect(onboarded_user.bio).to eq("I enjoy making all types of art")
     expect(onboarded_user.email).to eq("johndoe@hotmail.com")

@@ -15,7 +15,6 @@ class OnboardingController < ApplicationController
                  bio: form.bio,
                  email: form.email,
                  location: form.location,
-                 style: form.style,
-                 avatar: URI.parse(form.avatar))
+                 style: form.style)
   end
 end

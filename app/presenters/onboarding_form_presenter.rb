@@ -11,7 +11,6 @@ class OnboardingFormPresenter
 
     first_name = answer_for("SstvvqT1TyVl")["text"]
     last_name = answer_for("Z9Xuj60iPPGM")["text"]
-    avatar = answer_for("wq5QC9DsVBf5")["file_url"]
     school = answer_for("K7ds92B2yz0M")["text"]
     bio = answer_for("ABNgubRKZ2qw")["text"]
     email = answer_for("m4sHdfLxnvXr")["text"]
@@ -21,8 +20,7 @@ class OnboardingFormPresenter
   
     OnboardingForm.new(user_id: user_id, 
                        first_name: first_name, 
-                       last_name: last_name, 
-                       avatar: avatar, 
+                       last_name: last_name,
                        school: school, 
                        bio: bio, 
                        email: email, 
