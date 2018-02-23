@@ -21,10 +21,7 @@ describe "As a guest user" do
 
     click_on "Submit"
   
-    expect(current_path).to eq(user_path(User.last))
-    expect(page).to have_content("London")
-    expect(page).to have_content("I like art")
-    expect(page).to have_content("Nico Lewis")
+    expect(current_path).to eq(user_onboarding_index_path(User.last))
   end
   it "can view an artists show page that is featured in artists of the month" do 
     user = User.create(user_name: "nico24687", password: "donothackin", bio: "I love art", first_name: "Nico", last_name: "Lewis", email: "nico@fake.com", location:"London")
