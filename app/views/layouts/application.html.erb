@@ -42,6 +42,11 @@
               <li><%= link_to "Login", login_path%></li>
               <% end %>
               <% if current_user %>
+              <li>
+                <button class="btn btn-default navbar-btn navbar-btn-avitar" data-toggle="popover" data-original-title="" title="">
+                  <%= image_tag current_user.avatar.url(:thumb), class: "img-circle"%>
+                </button>
+               </li>
               <li><%= link_to 'Logout', logout_path, method: :delete %></li>
               <% end %>
             </ul>
