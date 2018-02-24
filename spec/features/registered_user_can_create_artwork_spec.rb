@@ -3,7 +3,6 @@ require 'rails_helper'
 describe "As a registered user" do 
   it "can create a new piece of artwork for itself" do 
     user = User.create(user_name: "nico24687", password: "donothackin", bio: "I love art", first_name: "Nico", last_name: "Lewis", email: "nico@fake.com", location:"London")
-
     visit user_path(user)
     
     click_on "New artwork"

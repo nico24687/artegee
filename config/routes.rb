@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :onboarding, only: [:index]
     resources :artworks
     resources :portfolio, only: [:index]
+    resources :posts
   end
   
   
