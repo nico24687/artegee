@@ -26,7 +26,7 @@ describe "As an unregistered or registered user" do
     visit "/"
     click_on "View"
     expect(current_path).to eq(user_artwork_path(user,artwork))
-    expect(page).to have_content("lady with swan")
+    expect(page).to have_content("Lady with swan")
     expect(page).to have_content("ooo look at that swan")
     expect(page).to have_content(50)
     expect(page).to have_content(30)

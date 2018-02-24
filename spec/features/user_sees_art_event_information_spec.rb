@@ -6,10 +6,6 @@ describe "user visits a user show page" do
 
     visit user_path(user)
 
-    expect(page).to have_content("Art and Opera in Italy")
-    expect(page).to have_css(".name")
-    expect(page).to have_css(".image")
-    expect(page).to have_css(".description")
-    expect(page).to have_css(".link")
+    expect(page).to have_content("Explore meetup")
   end
 end

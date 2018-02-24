@@ -125,7 +125,8 @@
       </div>
 
 <% if false %>
-      <% @meetups.sample(4).first(1).each do |meetup| %>
+<!-- have to also uncomment out @meetups in the controller-->
+      <% @meetups.sample(10).first(1).each do |meetup| %>
       <div class="panel panel-default m-b-md hidden-xs">
         <div class="panel-body">
           <h5 class="m-t-0">Sponsored</h5>
@@ -139,6 +140,7 @@
       </div>
       <% end %>
 <% end %>
+
 
       
 
