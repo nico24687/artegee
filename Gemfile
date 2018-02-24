@@ -32,6 +32,8 @@ gem 'capybara'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem "paperclip", "~> 4.2"
+gem 'faraday'
+gem 'figaro'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

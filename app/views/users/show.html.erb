@@ -203,10 +203,15 @@
     <%= f.submit 'Create Post', :class => 'btn btn-sm btn-pill btn-success',style: 'float:right; margin-top: 10px;' %>
   <% end %>
 
-  <h1>Local Meetups</h1>
-
+  <h1>Connect with the community</h1>
   
 
+<% @meetups.each do |meetup| %>
+<p class=".name"><%= meetup.name %></p>
+<p class=".image"><%= meetup.image %></p>
+<p class=".description"><%= meetup.description %></p>
+<p class=".link"><%= meetup.link %></p>
+<% end %>
 
 
 

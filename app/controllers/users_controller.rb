@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   def show 
     @user = User.find(params[:id])
     @post = Post.new
+    location = @user.location
+    @meetups = MeetupPresenter.new(location).meetups
   end
 
   private 
