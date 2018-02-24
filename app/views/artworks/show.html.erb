@@ -7,8 +7,9 @@
         
             <div class="modal-content" style="margin-top: 200px;">
               <div class="modal-header">
-                
-                <h4 class="modal-title"><%= @artwork.user.first_name %>'s <%= @artwork.title %></h4>
+               <%= image_tag @artwork.user.avatar.url(:thumb), class: "panel-profile-img"%>
+                <h4 class="modal-title"><%= @artwork.title.capitalize %></h4>
+               
               </div>
               <div class="modal-body modal-body-scroller">
                 <p><%= @artwork.description %></p>
@@ -19,9 +20,6 @@
 
               </div>
 
-              <div class="modal-body">
-                <input type="text" class="form-control" placeholder="Message">
-              </div>
             </div>
 
         </div>
