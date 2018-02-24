@@ -81,6 +81,9 @@
           </div>
         </li>
 
+
+        
+
        
         <% @user.posts.each do |post| %>
         <li class="media list-group-item p-a">
@@ -189,12 +192,23 @@
   </div>
 </div>
 
+
+
+
 <h1>Create a new post</h1>
-
-<%= link_to "Create New Post", new_user_post_path(@user) %>
-
+  <%= link_to "Create New Post", new_user_post_path(@user) %>
 
 
+
+
+
+
+  <%= form_for [ @user, @post] do |f| %>
+    <%= f.label :body %>
+    <%= f.text_field :body, :class => "form-control" %>
+
+    <%= f.submit 'Create Post', :class => 'btn btn-sm btn-pill btn-success',style: 'float:right; margin-top: 10px;' %>
+  <% end %>
 
 
 
