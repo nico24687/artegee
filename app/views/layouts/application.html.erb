@@ -29,31 +29,19 @@
         <div class="navbar-collapse collapse" id="navbar-collapse-main">
 
             <ul class="nav navbar-nav hidden-xs">
-              <li class="active">
-                <%= link_to "Home", root_path %>
-              </li>
-              <li>
-              </li>
-              <li>
-              </li>
+              <li><%= link_to "Home", root_path %></li>
+              <li><%= link_to "Profile", user_path(current_user) %></li>
+              <li><%= link_to "Portfolio",  user_portfolio_index_path(current_user) %></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right m-r-0 hidden-xs">
-
-              <li>
-                <%= link_to "Sign Up", new_user_path %> 
-              </li>
-              <li>
-                <%= link_to "Login", login_path%>
-              </li>
-              <li>
-                <%= link_to 'Logout', logout_path, method: :delete %>
-              </li>
-
-            </ul>
-            <ul class="nav navbar-nav hidden">
-              <li><a href="#" data-action="growl">Growl</a></li>
-              <li><a href="login/index.html">Logout</a></li>
+              <% if current_user == false %>
+              <li><%= link_to "Sign Up", new_user_path %> </li>
+              <li><%= link_to "Login", login_path%></li>
+              <% end %>
+              <% if current_user %>
+              <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+              <% end %>
             </ul>
           </div>
       </div>
