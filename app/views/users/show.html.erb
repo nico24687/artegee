@@ -49,7 +49,7 @@
         <div class="panel-body">
           <h5 class="m-t-0">Artworks <small> <%= link_to "View all", user_portfolio_index_path(@user) %></small></h5>
           <div data-grid="images" data-target-height="150">
-            <% @user.artworks.sample(3).each do |artwork| %>
+            <% @user.artworks.sample(4).each do |artwork| %>
             <div style="margin-bottom: 10px; margin-right: 10px; display: inline-block; vertical-align: bottom;">
               <%= image_tag artwork.image.url(:medium), style: "width: 110px; height: 110px;", data: {'action' => 'zoom'} %>
             </div>
@@ -126,7 +126,7 @@
       </div>
       <% end %>
 
-<% if false %>
+
 <!-- have to also uncomment out @meetups in the controller-->
       <% @meetups.sample(10).first(1).each do |meetup| %>
       <div class="panel panel-default m-b-md hidden-xs">
@@ -141,7 +141,7 @@
         </div>
       </div>
       <% end %>
-<% end %>
+
 
 
 

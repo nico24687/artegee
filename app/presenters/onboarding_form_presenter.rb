@@ -3,10 +3,6 @@ class OnboardingFormPresenter
     @form = form 
   end
   def form 
-    
-    puts "creating form PORO..."
-    pp @form
-
     user_id = @form["form_response"]["hidden"]["user_id"]
 
     first_name = answer_for("SstvvqT1TyVl")["text"]

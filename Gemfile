@@ -36,6 +36,7 @@ gem 'faraday'
 gem 'figaro'
 gem 'aws-sdk', '< 2.0'
 
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -47,6 +48,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'launchy'
+  gem 'simplecov', require: false, group: :test
 end
 
 group :development do

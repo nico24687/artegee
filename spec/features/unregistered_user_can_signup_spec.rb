@@ -6,7 +6,7 @@ describe "as an unregestiered user" do
   
     fill_in "user[user_name]", with: "nico24687"
     fill_in "user[password]", with: "donothackin"
-    page.attach_file("user[avatar]", Rails.root + 'app/assets/images/avatar-fat.jpg') 
+  
    
     click_on "Submit"
 
