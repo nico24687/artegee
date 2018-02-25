@@ -35,6 +35,8 @@ gem "paperclip", "~> 4.2"
 gem 'faraday'
 gem 'figaro'
 gem 'aws-sdk', '< 2.0'
+gem 'newrelic_rpm'
+
 
 
 # Use Capistrano for deployment
