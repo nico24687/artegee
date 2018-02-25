@@ -65,22 +65,23 @@
 
 
 
-
     <div class="col-md-6">
+<% if current_user.id == @user.id %>
     
       <ul class="list-group media-list media-list-stream">
-
         <li class="media list-group-item p-a">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Message">
-            <div class="input-group-btn">
-              <button type="button" class="btn btn-default">
-                <span><i class="fas fa-paper-plane"></i></span>
-              </button>
+          <%= form_for [ @user, @post] do |f| %>
+            <div class="input-group">
+              <%= f.text_field :body, class: "form-control", placeholder: "Message" %>
+              <div class="input-group-btn">
+                <%= f.button type: "submit", class: "btn btn-default submit-post" do %>
+                  <span><i class="fas fa-paper-plane"></i></span>
+                <% end %>
+              </div>
             </div>
-          </div>
+          <% end %>
         </li>
-
+  <% end %>
 
         
 
@@ -119,10 +120,11 @@
 
     </div>
     <div class="col-md-3">
-
+      <% if current_user.id == @user.id %>
       <div class="alert alert-info alert-dismissible hidden-xs" role="alert">
         <a class="alert-link" href="profile/index.html"><%= link_to "New artwork", new_user_artwork_path(@user) %>!</a> Show off what you have been working on
       </div>
+      <% end %>
 
 <% if false %>
 <!-- have to also uncomment out @meetups in the controller-->
@@ -140,6 +142,7 @@
       </div>
       <% end %>
 <% end %>
+
 
 
 
@@ -172,7 +175,7 @@
 
 
 
-
+<% if false %>
 <h1>Create a new post</h1>
   <%= form_for [ @user, @post] do |f| %>
     <%= f.label :body %>
@@ -180,6 +183,7 @@
 
     <%= f.submit 'Create Post', :class => 'btn btn-sm btn-pill btn-success',style: 'float:right; margin-top: 10px;' %>
   <% end %>
+<% end %>
 
 
 
