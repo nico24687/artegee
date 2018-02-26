@@ -36,6 +36,8 @@ gem 'faraday'
 gem 'figaro'
 gem 'aws-sdk', '< 2.0'
 gem 'newrelic_rpm'
+gem 'private_pub'
+gem 'thin'
 
 
 

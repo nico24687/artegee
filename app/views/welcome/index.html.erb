@@ -93,5 +93,24 @@
     </div>
 </div>
 
+<h1>All users except logged in user</h1>
+
+
+
+
+<% if current_user %>
+
+<% @users.each_with_index do |user, index| %>
+    <tr>
+      <td><%= index +=1 %></td>
+      <td><%= user.first_name %></td>
+      <td>
+        <%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
+                    "data-sid" => current_user.id, "data-rip" => user.id %>
+      </td>
+    </tr>
+<% end %>
+
+<% end %>
 
      
