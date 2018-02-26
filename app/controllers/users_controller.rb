@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @post = Post.new
     location = @user.location
-    # @meetup = MeetupPresenter.new(location).meetup
+    @meetup = MeetupPresenter.new(location).meetup
   end
 
   private 
