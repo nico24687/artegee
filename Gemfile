@@ -51,6 +51,7 @@ group :development, :test do
   gem 'faker'
   gem 'launchy'
   gem 'simplecov', require: false, group: :test
+
 end
 
 group :development do

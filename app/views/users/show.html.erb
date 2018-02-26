@@ -127,20 +127,24 @@
       <% end %>
 
 
+
 <!-- have to also uncomment out @meetups in the controller-->
-      <% @meetups.sample(10).first(1).each do |meetup| %>
+<% if false %>  
       <div class="panel panel-default m-b-md hidden-xs">
         <div class="panel-body">
           <h5 class="m-t-0">Sponsored</h5>
           <div data-grid="images" data-target-height="150">
-            <%= image_tag meetup.image, style: "width: 245px; height: 230px; margin-bottom: 10px; margin-right: 0px; display: inline-block; vertical-align: bottom;"%>
+            <%= image_tag @meetup.image, style: "width: 245px; height: 230px; margin-bottom: 10px; margin-right: 0px; display: inline-block; vertical-align: bottom;"%>
           </div>
-          <p><strong><%= meetup.name %></strong> <%= strip_tags(meetup.description).html_safe[0, 170] + "..." %></p>
+          <p><strong><%= @meetup.name %></strong> <%= strip_tags(@meetup.description).html_safe[0, 170] + "..." %></p>
           
-          <%= link_to "Explore meetup", "#{meetup.link}", :target => "_blank", class: "btn btn-primary-outline btn-sm"  %>
+          <%= link_to "Explore meetup", "#{@meetup.link}", :target => "_blank", class: "btn btn-primary-outline btn-sm"  %>
         </div>
       </div>
-      <% end %>
+<% end %>
+     
+
+
 
 
 
