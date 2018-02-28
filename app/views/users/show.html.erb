@@ -34,7 +34,7 @@
           </ul>
 
            <ul class="panel-menu">
-              <% if current_user %>
+              <% if current_user && current_user.id != @user.id %>
                 <p><%= link_to "Chat", "#", class: "btn btn-sm btn-success-outline start-conversation", "data-sid" => current_user.id, "data-rip" => @user.id %></p>
               <% end %>
           </ul>
