@@ -10,7 +10,7 @@ class MeetupPresenter
   private
 
   def meetup_image(meetup)
-    if meetup.has_key("key_photo")
+    if meetup.has_key?("key_photo")
       meetup["key_photo"]["highres_link"]
     else
       "https://image.ibb.co/naozDH/mountains_1x.png"
